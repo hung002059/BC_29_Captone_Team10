@@ -31,6 +31,10 @@ header .header_cart i {
   border: 0px;
 }
 
+#product .card_overlay .card .card-layout .card-info {
+  display: none;
+}
+
 #product .card_overlay .card .card-layout:hover .card-info {
   display: block;
 }

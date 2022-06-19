@@ -3,7 +3,6 @@ function getId(id) {
 }
 const service = new Service();
 const productList = new DanhSachSanPham();
-// const sanPham = new SanPham();
 const getProduct = () => {
   service
     .getListProductAPI()
@@ -14,32 +13,6 @@ const getProduct = () => {
     .catch((error) => console.error(error));
 };
 getProduct();
-const mappingAPI = (productList) => {
-  productList.map((ele) => {
-    const {
-      id,
-      name,
-      price,
-      screen,
-      backCamera,
-      frontCamera,
-      img,
-      desc,
-      type,
-    } = ele;
-    return new SanPham(
-      id,
-      name,
-      price,
-      screen,
-      backCamera,
-      frontCamera,
-      img,
-      desc,
-      type
-    );
-  });
-};
 const renderProduct = () => {
   const product = productList.filterProduct().reduce((total, ele, idx) => {
     total += `
@@ -102,7 +75,6 @@ const themProduct = (id) => {
     .getProductById(id)
     .then((result) => {
       tableList.addToCart(result.data);
-      setLocal();
       renderTable();
     })
     .catch((error) => console.error(error));
@@ -139,7 +111,3 @@ const renderTable = () => {
 };
 const giamSL = (id) => {};
 const tangSL = (id) => {};
-const setLocal = () => {
-  console.log(tableList.DSGH);
-  const stringtify = JSON.stringify(tableList.DSGH);
-};

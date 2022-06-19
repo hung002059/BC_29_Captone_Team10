@@ -7,8 +7,7 @@ function SanPham(
   frontCamera,
   img,
   desc,
-  type,
-  soLuong
+  type
 ) {
   this.id = id;
   this.name = name;
@@ -19,5 +18,4 @@ function SanPham(
   this.img = img;
   this.desc = desc;
   this.type = type;
-  this.soLuong = soLuong;
 }
